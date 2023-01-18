@@ -29,8 +29,31 @@ function pow (x, n) {
     }
     return answer
 }
-let x = prompt('write values for x','')
+// let x = prompt('write values for x','')
 
-let n = prompt('write values for n','')
+// let n = prompt('write values for n','')
 
-alert(pow(x, n));
+// alert(pow(x, n));
+
+// _______________________________
+// Перепишите с использованием функции-стрелки. Замените код Function Expression стрелочной функцией
+// ________________________________
+
+// function ask(question, yes, no) {
+//     if (confirm(question)) yes()
+//     else no();
+//   }
+//   ask(
+//     "Вы согласны?",
+//     function() { alert("Вы согласились."); },
+//     function() { alert("Вы отменили выполнение."); }
+//   );
+
+  function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+  }
+  ask(
+    "Вы согласны?",() => alert("Вы согласились."),() => alert("Вы отменили выполнение.")
+  )
+
