@@ -29,11 +29,11 @@ function pow (x, n) {
     }
     return answer
 }
-// let x = prompt('write values for x','')
+let x = prompt('write values for x','')
 
-// let n = prompt('write values for n','')
+let n = prompt('write values for n','')
 
-// alert(pow(x, n));
+alert(pow(x, n));
 
 // _______________________________
 // Перепишите с использованием функции-стрелки. Замените код Function Expression стрелочной функцией
@@ -57,3 +57,56 @@ function pow (x, n) {
     "Вы согласны?",() => alert("Вы согласились."),() => alert("Вы отменили выполнение.")
   )
 
+// _________________________________________________
+// Сортировать в порядке по убыванию
+// _________________________________________________
+
+let arr = [5, 2, 1, -10, 8];
+arr.sort ((a,b)=>b-a);
+console.log(arr);
+
+// ________________________________
+// Трансформировать в массив имён
+// ________________________________
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+let names = users.map(item =>item.name);
+
+alert( names ); // Вася, Петя, Маша
+
+// __________________________
+// Трансформировать в объекты
+// __________________________
+
+let vasya1 = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya1 = { name: "Петя", surname: "Иванов", id: 2 };
+let masha1 = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users1 = [ vasya1, petya1, masha1 ];
+
+let users1Mapped = users1.map(user => ({fullName: `${user.name} ${user.surname}`,id: user.id}));
+
+alert( users1Mapped[0].id ) // 1
+alert( users1Mapped[0].fullName ) // Вася Пупкин
+
+
+// ________________________
+// Получить средний возраст
+// ________________________
+
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+}
+
+let vasya2 = { name: "Вася", age: 25 };
+let petya2 = { name: "Петя", age: 30 };
+let masha2 = { name: "Маша", age: 29 };
+
+let arr2 = [ vasya2, petya2, masha2 ];
+
+alert( getAverageAge(arr2) ); // (25 + 30 + 29) / 3 = 28
